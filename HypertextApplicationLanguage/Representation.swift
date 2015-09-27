@@ -38,13 +38,13 @@ public class Representation: NSObject {
 
   let namespaceManager = NamespaceManager()
 
-  var links = [Link]()
+  public var links = [Link]()
 
-  var properties = [String: AnyObject]()
+  public var properties = [String: AnyObject]()
 
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
-  var representationsForRel = [String: [Representation]]()
+  public var representationsForRel = [String: [Representation]]()
 
   public override init() {}
 
