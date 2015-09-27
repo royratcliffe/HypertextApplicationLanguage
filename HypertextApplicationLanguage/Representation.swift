@@ -30,7 +30,7 @@ import Foundation
 /// Resource is the name of a representation embedded within another
 /// super-representation. Representations have zero or resources. They will
 /// appear in the rendered results as embedded resources.
-public class Representation {
+public class Representation: NSObject {
 
   public static let Links = "_links"
 
