@@ -46,6 +46,8 @@ public class Representation: NSObject {
   /// representations, zero or more.
   var representationsForRel = [String: [Representation]]()
 
+  public override init() {}
+
   // MARK: - Namespaces
 
   public var namespaces: [String: String] {
