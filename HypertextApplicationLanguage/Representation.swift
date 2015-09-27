@@ -108,6 +108,11 @@ public class Representation: NSObject {
   public func withRepresentation(rel: String, representation: Representation) -> Representation {
     if var representations = representationsForRel[rel] {
       representations.append(representation)
+      // In Swift, the original dictionary accessor answers with a copy of the
+      // array, not the array within the dictionary itself. Therefore take a
+      // mutable copy and reassign the dictionary entry after appending the new
+      // embedded representation.
+      representationsForRel[rel] = representations
     }
     else {
       representationsForRel[rel] = [representation]
