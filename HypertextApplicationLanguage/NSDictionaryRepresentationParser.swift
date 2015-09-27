@@ -105,7 +105,7 @@ public class NSDictionaryRepresentationParser {
         // dictionary.
         for object in NSDictionaryRepresentationParser.objects(value) {
           let embeddedRepresentation = Representation()
-          parse(representation, object: object)
+          parse(embeddedRepresentation, object: object)
           representation.withRepresentation(rel, representation: embeddedRepresentation)
         }
       }
