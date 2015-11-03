@@ -28,12 +28,12 @@ public class NSDictionaryRepresentationRenderer {
 
   /// Renders a representation to a dictionary.
   /// - returns: The resulting dictionary representation.
-  public func render(representation: Representation) -> NSDictionary {
+  public static func render(representation: Representation) -> NSDictionary {
     return render(representation, embedded: false)
   }
 
   /// Renders either a top-level representation or an embedded resource.
-  private func render(representation: Representation, embedded: Bool) -> NSDictionary {
+  private static func render(representation: Representation, embedded: Bool) -> NSDictionary {
     let object = NSMutableDictionary()
 
     // Render the name-spaces and links but only if there are name-spaces and

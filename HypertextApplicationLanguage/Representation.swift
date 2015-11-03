@@ -30,7 +30,7 @@ import Foundation
 /// Resource is the name of a representation embedded within another
 /// super-representation. Representations have zero or resources. They will
 /// appear in the rendered results as embedded resources.
-public class Representation {
+public class Representation: NSObject {
 
   public static let Links = "_links"
 
@@ -38,13 +38,15 @@ public class Representation {
 
   let namespaceManager = NamespaceManager()
 
-  var links = [Link]()
+  public var links = [Link]()
 
-  var properties = [String: AnyObject]()
+  public var properties = [String: AnyObject]()
 
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
-  var representationsForRel = [String: [Representation]]()
+  public var representationsForRel = [String: [Representation]]()
+
+  public override init() {}
 
   // MARK: - Namespaces
 
@@ -106,6 +108,11 @@ public class Representation {
   public func withRepresentation(rel: String, representation: Representation) -> Representation {
     if var representations = representationsForRel[rel] {
       representations.append(representation)
+      // In Swift, the original dictionary accessor answers with a copy of the
+      // array, not the array within the dictionary itself. Therefore take a
+      // mutable copy and reassign the dictionary entry after appending the new
+      // embedded representation.
+      representationsForRel[rel] = representations
     }
     else {
       representationsForRel[rel] = [representation]
