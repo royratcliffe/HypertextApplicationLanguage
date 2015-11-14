@@ -1,1 +1,4 @@
 language: objective-c
+xcode_project: HypertextApplicationLanguage.xcodeproj
+xcode_scheme: HypertextApplicationLanguage
+osx_image: xcode7.1
