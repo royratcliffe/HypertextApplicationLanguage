@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'HypertextApplicationLanguage'
-  spec.version = '0.1.1'
+  spec.version = '0.1.2'
   spec.summary = 'Swift framework for Hypertext Application Language'
   spec.description = <<-DESCRIPTION
   What HTML does for web browsers, HAL does for applications.
