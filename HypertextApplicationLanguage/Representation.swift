@@ -88,7 +88,7 @@ public class Representation: NSObject {
 
   // MARK: - Properties
 
-  public func valueFor(name: String, defaultValue: AnyObject?) -> AnyObject? {
+  public func valueFor(name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
     return properties[name] ?? defaultValue
   }
 
