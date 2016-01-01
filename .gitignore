@@ -1,0 +1,4 @@
+# Ignore everything beneath `build` and `docs`. Jazzy runs `xcodebuild` from the
+# project folder and creates them both.
+build
+docs

@@ -88,6 +88,10 @@ public class Representation: NSObject {
 
   // MARK: - Properties
 
+  public func valueFor(name: String, defaultValue: AnyObject?) -> AnyObject? {
+    return properties[name] ?? defaultValue
+  }
+
   public func withProperty(name: String, value: AnyObject) -> Representation {
     properties[name] = value
     return self
