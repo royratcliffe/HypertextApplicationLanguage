@@ -9,7 +9,7 @@ between resources. What HAL calls a representation, HTML calls a web page; such
 pages have links to other pages. HTML was designed for presenting information
 to humans. HAL was designed for presenting information to applications.
 
-This gem provides a suite of Ruby classes for rendering and parsing resource
+This framework provides a suite of Swift classes for rendering and parsing resource
 representations, including their links, properties and nested representations
 of embedded resources.
 
@@ -18,7 +18,7 @@ of embedded resources.
 The interfaces and implementations largely echo those written in Java, but
 there are some deliberate deviations.
 
-The Ruby gem adds some consistency in naming. Representation is the name used
+The Swift framework adds some consistency in naming. Representation is the name used
 to describe an object that represents some remote resource. The term “resource”
 describes the actual remote resource. Representations represent resources only;
 they are not the resource themselves.
