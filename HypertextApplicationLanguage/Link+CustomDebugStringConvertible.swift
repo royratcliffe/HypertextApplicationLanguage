@@ -24,7 +24,7 @@
 
 import Foundation
 
-extension Link: CustomDebugStringConvertible {
+extension Link {
 
   public override var debugDescription: String {
     var description = "\(super.debugDescription) rel=\(rel) href=\(href)"
