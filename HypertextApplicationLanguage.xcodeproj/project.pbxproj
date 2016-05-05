@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7812331F1B985C4D000D929E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812331E1B985C4D000D929E /* Link.swift */; settings = {ASSET_TAGS = (); }; };
-		781233211B985D13000D929E /* LinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781233201B985D13000D929E /* LinkTests.swift */; settings = {ASSET_TAGS = (); }; };
-		782155C11B9F11A20085CEBC /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C01B9F11A20085CEBC /* Representation.swift */; settings = {ASSET_TAGS = (); }; };
-		782155C51B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C41B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift */; settings = {ASSET_TAGS = (); }; };
-		782155C91B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C81B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift */; settings = {ASSET_TAGS = (); }; };
-		78401B3E1B99B40600468367 /* Link+Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3D1B99B40600468367 /* Link+Copying.swift */; settings = {ASSET_TAGS = (); }; };
-		78401B401B99B55800468367 /* Link+Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3F1B99B55800468367 /* Link+Object.swift */; settings = {ASSET_TAGS = (); }; };
-		78493B601BA08E8D00EF7893 /* NamespaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B5F1BA08E8D00EF7893 /* NamespaceManager.swift */; settings = {ASSET_TAGS = (); }; };
-		78493B621BA08F8C00EF7893 /* NamespaceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
-		787A8D1B1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787A8D1A1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift */; settings = {ASSET_TAGS = (); }; };
-		78A330FA1BAD18A20080B5C1 /* RepresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */; settings = {ASSET_TAGS = (); }; };
+		7812331F1B985C4D000D929E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812331E1B985C4D000D929E /* Link.swift */; };
+		781233211B985D13000D929E /* LinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781233201B985D13000D929E /* LinkTests.swift */; };
+		782155C11B9F11A20085CEBC /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C01B9F11A20085CEBC /* Representation.swift */; };
+		782155C51B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C41B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift */; };
+		782155C91B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C81B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift */; };
+		78401B3E1B99B40600468367 /* Link+Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3D1B99B40600468367 /* Link+Copying.swift */; };
+		78401B401B99B55800468367 /* Link+Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3F1B99B55800468367 /* Link+Object.swift */; };
+		78493B601BA08E8D00EF7893 /* NamespaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B5F1BA08E8D00EF7893 /* NamespaceManager.swift */; };
+		78493B621BA08F8C00EF7893 /* NamespaceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */; };
+		787A8D1B1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787A8D1A1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift */; };
+		78A330FA1BAD18A20080B5C1 /* RepresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */; };
 		78E0DA7B1B977B43007DC50C /* HypertextApplicationLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0DA7A1B977B43007DC50C /* HypertextApplicationLanguage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E0DA821B977B43007DC50C /* HypertextApplicationLanguage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E0DA771B977B43007DC50C /* HypertextApplicationLanguage.framework */; settings = {ASSET_TAGS = (); }; };
+		78E0DA821B977B43007DC50C /* HypertextApplicationLanguage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E0DA771B977B43007DC50C /* HypertextApplicationLanguage.framework */; };
 		78E0DA871B977B43007DC50C /* HypertextApplicationLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */; };
 /* End PBXBuildFile section */
 
