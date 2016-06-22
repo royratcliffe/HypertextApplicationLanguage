@@ -55,7 +55,7 @@ public class Representation: NSObject {
   }
 
   public func withNamespace(name: String, ref: String) -> Representation {
-    namespaceManager.withNamespace(name: name, ref: ref)
+    let _ = namespaceManager.withNamespace(name: name, ref: ref)
     return self
   }
 

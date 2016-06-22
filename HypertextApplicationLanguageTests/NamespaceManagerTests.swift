@@ -49,7 +49,7 @@ class NamespaceManagerTests: XCTestCase {
 
   func testWithNamespace() {
     XCTAssertEqual(0, manager.namespaces.count)
-    manager.withNamespace(name: "name", ref: "http://localhost/" + NamespaceManager.Rel)
+    let _ = manager.withNamespace(name: "name", ref: "http://localhost/" + NamespaceManager.Rel)
     XCTAssertEqual("http://localhost/{rel}", manager.namespaces["name"])
     XCTAssertEqual(1, manager.namespaces.count)
   }
