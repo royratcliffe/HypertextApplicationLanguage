@@ -113,6 +113,7 @@ public class NSDictionaryRepresentationRenderer {
       object[Representation.Embedded] = embeddedObject
     }
 
+    // swiftlint:disable:next force_cast
     return object.copy() as! NSDictionary
   }
 
