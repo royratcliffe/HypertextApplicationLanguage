@@ -55,8 +55,7 @@ public class NSDictionaryRepresentationRenderer {
       for link in links {
         if var links = linksForRel[link.rel] {
           links.append(link)
-        }
-        else {
+        } else {
           linksForRel[link.rel] = [link]
         }
       }
