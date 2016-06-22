@@ -68,9 +68,8 @@ public class NamespaceManager {
       let rightDistance = ref.distance(from: range.upperBound, to: ref.endIndex)
       let startIndex = href.index(href.startIndex, offsetBy: leftDistance)
       let endIndex = href.index(href.endIndex, offsetBy: -rightDistance)
-      if startIndex <= endIndex &&
-          href.substring(to: startIndex) == left &&
-          href.substring(from: endIndex) == right {
+      guard startIndex <= endIndex else { continue }
+      if href.substring(to: startIndex) == left && href.substring(from: endIndex) == right {
         return name + ":" + href.substring(with: startIndex..<endIndex)
       }
     }
