@@ -54,8 +54,8 @@ public class Representation: NSObject {
     return namespaceManager.namespaces
   }
 
-  public func withNamespace(name: String, ref: String) -> Representation {
-    let _ = namespaceManager.withNamespace(name: name, ref: ref)
+  public func with(name: String, ref: String) -> Representation {
+    let _ = namespaceManager.with(name: name, ref: ref)
     return self
   }
 
@@ -77,13 +77,13 @@ public class Representation: NSObject {
   }
 
   /// Adds a link to this representation.
-  public func withLink(link: Link) -> Representation {
+  public func with(link: Link) -> Representation {
     links.append(link)
     return self
   }
 
-  public func withLink(rel: String, href: String) -> Representation {
-    return withLink(link: Link(rel: rel, href: href))
+  public func with(rel: String, href: String) -> Representation {
+    return with(link: Link(rel: rel, href: href))
   }
 
   // MARK: - Properties
@@ -92,7 +92,7 @@ public class Representation: NSObject {
     return properties[name] ?? defaultValue
   }
 
-  public func withProperty(name: String, value: AnyObject) -> Representation {
+  public func with(name: String, value: AnyObject) -> Representation {
     properties[name] = value
     return self
   }
@@ -109,7 +109,7 @@ public class Representation: NSObject {
 
   /// Associates a given embedded representation with this representation by a
   /// given relation.
-  public func withRepresentation(rel: String, representation: Representation) -> Representation {
+  public func with(rel: String, representation: Representation) -> Representation {
     if var representations = representationsForRel[rel] {
       representations.append(representation)
       // In Swift, the original dictionary accessor answers with a copy of the
