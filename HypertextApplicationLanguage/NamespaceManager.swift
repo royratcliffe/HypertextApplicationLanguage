@@ -81,12 +81,12 @@ public class NamespaceManager {
   /// `{rel}` placeholder. This is a very basic way to parse a CURIE, but it
   /// works.
   public func href(curie: String) -> String? {
-    guard let range = curie.rangeOfString(":") else { return nil }
-    let name = curie.substringToIndex(range.startIndex)
+    guard let range = curie.range(of: ":") else { return nil }
+    let name = curie.substring(to: range.lowerBound)
     guard var ref = refForName[name] else { return nil }
-    guard let relRange = ref.rangeOfString(NamespaceManager.Rel) else { return nil }
-    let arg = curie.substringFromIndex(range.endIndex)
-    ref.replaceRange(relRange, with: arg)
+    guard let relRange = ref.range(of: NamespaceManager.Rel) else { return nil }
+    let arg = curie.substring(from: range.upperBound)
+    ref.replaceSubrange(relRange, with: arg)
     return ref
   }
 
