@@ -34,6 +34,7 @@ public class NSDictionaryRepresentationParser {
   /// Parses a dictionary, loading the given representation with its
   /// hypertext-application-language content.
   public static func parse(representation: Representation, object: NSDictionary) {
+    // swiftlint:disable:previous cyclomatic_complexity
     // Takes compact URI pairs from the links. Looks for the `curies`
     // sub-dictionary within `_links` root-level dictionary. Every CURIE is a
     // dictionary with a name and a hypertext reference.
