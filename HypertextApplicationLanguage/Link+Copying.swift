@@ -26,7 +26,7 @@ import Foundation
 
 extension Link: NSCopying {
 
-  public func copyWithZone(zone: NSZone) -> AnyObject {
+  public func copy(with zone: NSZone? = nil) -> AnyObject {
     let link = Link(rel: rel, href: href)
     link.name = name
     link.title = title

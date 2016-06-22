@@ -49,21 +49,21 @@ class NamespaceManagerTests: XCTestCase {
 
   func testWithNamespace() {
     XCTAssertEqual(0, manager.namespaces.count)
-    manager.withNamespace("name", ref: "http://localhost/" + NamespaceManager.Rel)
+    manager.withNamespace(name: "name", ref: "http://localhost/" + NamespaceManager.Rel)
     XCTAssertEqual("http://localhost/{rel}", manager.namespaces["name"])
     XCTAssertEqual(1, manager.namespaces.count)
   }
 
-  let nsManager = NamespaceManager().withNamespace("ns", ref: "http://localhost/{rel}/to")
+  let nsManager = NamespaceManager().withNamespace(name: "ns", ref: "http://localhost/{rel}/to")
 
   func testCurieForHref() {
-    XCTAssertEqual("ns:path", nsManager.curie("http://localhost/path/to"))
-    XCTAssertNil(nsManager.curie("http://localhost:8080/to"))
+    XCTAssertEqual("ns:path", nsManager.curie(href: "http://localhost/path/to"))
+    XCTAssertNil(nsManager.curie(href: "http://localhost:8080/to"))
   }
 
   func testHrefForCurie() {
-    XCTAssertEqual("http://localhost/arg/to", nsManager.href("ns:arg"))
-    XCTAssertNil(nsManager.href("n$:arg"))
+    XCTAssertEqual("http://localhost/arg/to", nsManager.href(curie: "ns:arg"))
+    XCTAssertNil(nsManager.href(curie: "n$:arg"))
   }
 
 }

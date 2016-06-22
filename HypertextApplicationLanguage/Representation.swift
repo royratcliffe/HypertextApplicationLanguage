@@ -55,24 +55,24 @@ public class Representation: NSObject {
   }
 
   public func withNamespace(name: String, ref: String) -> Representation {
-    namespaceManager.withNamespace(name, ref: ref)
+    namespaceManager.withNamespace(name: name, ref: ref)
     return self
   }
 
   // MARK: - Links
 
   public var link: Link? {
-    return linkFor(Link.SelfRel)
+    return linkFor(hrefOrRel: Link.SelfRel)
   }
 
   public func linkFor(hrefOrRel: String) -> Link? {
-    return linksFor(hrefOrRel).first
+    return linksFor(hrefOrRel: hrefOrRel).first
   }
 
   /// Answers the representation's links selected by either a hypertext
   /// reference or by a relation.
   public func linksFor(hrefOrRel: String) -> [Link] {
-    let rel = namespaceManager.curie(hrefOrRel) ?? hrefOrRel
+    let rel = namespaceManager.curie(href: hrefOrRel) ?? hrefOrRel
     return links.filter { $0.rel == rel }
   }
 
@@ -83,7 +83,7 @@ public class Representation: NSObject {
   }
 
   public func withLink(rel: String, href: String) -> Representation {
-    return withLink(Link(rel: rel, href: href))
+    return withLink(link: Link(rel: rel, href: href))
   }
 
   // MARK: - Properties

@@ -31,10 +31,10 @@ extension Link {
   /// They can never be equal by value if the other object is not even a member
   /// of the same class or is `nil`. Value-equality requires type
   /// equivalence. Subclasses can compare equal if their common values match.
-  public override func isEqual(object: AnyObject?) -> Bool {
+  public override func isEqual(_ object: AnyObject?) -> Bool {
     guard let other = object as? Link else { return false }
-    let valuesForKeys = dictionaryWithValuesForKeys(Link.AttributeNames) as NSDictionary
-    return valuesForKeys.isEqual(other.dictionaryWithValuesForKeys(Link.AttributeNames))
+    let valuesForKeys = dictionaryWithValues(forKeys: Link.AttributeNames) as NSDictionary
+    return valuesForKeys.isEqual(other.dictionaryWithValues(forKeys: Link.AttributeNames))
   }
 
 }
