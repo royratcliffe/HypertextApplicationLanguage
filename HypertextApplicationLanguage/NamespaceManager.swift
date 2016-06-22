@@ -56,17 +56,22 @@ public class NamespaceManager {
   /// the current set of CURIE specifications, the name-spaces.
   /// - returns: Answers the CURIE'd reference corresponding to the given
   ///   hypertext reference, or +nil+ if there is no matching CURIE.
+  ///
+  /// The implementation avoids using `hasPrefix` and `hasSuffix`. These methods
+  /// always answer `false` if the given prefix or suffix is an empty string.
   public func curie(href: String) -> String? {
     for (name, ref) in refForName {
-      guard let range = ref.rangeOfString(NamespaceManager.Rel) else { continue }
-      let left = ref.substringToIndex(range.startIndex)
-      let right = ref.substringFromIndex(range.endIndex)
-      if href.hasPrefix(left) && href.hasSuffix(right) {
-        let leftDistance = ref.startIndex.distanceTo(range.startIndex)
-        let rightDistance = range.endIndex.distanceTo(ref.endIndex)
-        let startIndex = href.startIndex.advancedBy(leftDistance)
-        let endIndex = href.endIndex.advancedBy(-rightDistance)
-        return name + ":" + href.substringWithRange(startIndex..<endIndex)
+      guard let range = ref.range(of: NamespaceManager.Rel) else { continue }
+      let left = ref.substring(to: range.lowerBound)
+      let right = ref.substring(from: range.upperBound)
+      let leftDistance = ref.distance(from: ref.startIndex, to: range.lowerBound)
+      let rightDistance = ref.distance(from: range.upperBound, to: ref.endIndex)
+      let startIndex = href.index(href.startIndex, offsetBy: leftDistance)
+      let endIndex = href.index(href.endIndex, offsetBy: -rightDistance)
+      if startIndex <= endIndex &&
+          href.substring(to: startIndex) == left &&
+          href.substring(from: endIndex) == right {
+        return name + ":" + href.substring(with: startIndex..<endIndex)
       }
     }
     return nil
