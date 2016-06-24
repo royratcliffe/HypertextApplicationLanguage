@@ -65,7 +65,7 @@ public class NSDictionaryRepresentationParser {
           // require a relation and a reference. Other attributes remain
           // optional.
           guard let href = object[Link.Href] as? String else { continue }
-          let link = Link(rel: rel, href: href)
+          var link = Link(rel: rel, href: href)
 
           // Makes you wonder. Should the following pass the name? Doing so
           // allows name-spaces to sneak into the links. Name-spaces should only

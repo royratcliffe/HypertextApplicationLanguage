@@ -22,15 +22,13 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
-
 /// Represents a resource. This includes sub-resources which also have their own
 /// representation. Representations have links, properties and sub-resources.
 ///
 /// Resource is the name of a representation embedded within another
 /// super-representation. Representations have zero or resources. They will
 /// appear in the rendered results as embedded resources.
-public class Representation: NSObject {
+public class Representation {
 
   public static let Links = "_links"
 
@@ -45,8 +43,6 @@ public class Representation: NSObject {
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
   public var representationsForRel = [String: [Representation]]()
-
-  public override init() {}
 
   // MARK: - Namespaces
 

@@ -12,12 +12,11 @@
 		782155C11B9F11A20085CEBC /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C01B9F11A20085CEBC /* Representation.swift */; };
 		782155C51B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C41B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift */; };
 		782155C91B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782155C81B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift */; };
-		78401B3E1B99B40600468367 /* Link+Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3D1B99B40600468367 /* Link+Copying.swift */; };
-		78401B401B99B55800468367 /* Link+Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78401B3F1B99B55800468367 /* Link+Object.swift */; };
 		78493B601BA08E8D00EF7893 /* NamespaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B5F1BA08E8D00EF7893 /* NamespaceManager.swift */; };
 		78493B621BA08F8C00EF7893 /* NamespaceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */; };
 		787A8D1B1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787A8D1A1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift */; };
 		78A330FA1BAD18A20080B5C1 /* RepresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */; };
+		78C736EF1D1D11460061A9EA /* Link+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C736EE1D1D11460061A9EA /* Link+Equatable.swift */; };
 		78E0DA7B1B977B43007DC50C /* HypertextApplicationLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0DA7A1B977B43007DC50C /* HypertextApplicationLanguage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E0DA821B977B43007DC50C /* HypertextApplicationLanguage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E0DA771B977B43007DC50C /* HypertextApplicationLanguage.framework */; };
 		78E0DA871B977B43007DC50C /* HypertextApplicationLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */; };
@@ -39,12 +38,11 @@
 		782155C01B9F11A20085CEBC /* Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
 		782155C41B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryRepresentationRenderer.swift; sourceTree = "<group>"; };
 		782155C81B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryRepresentationParser.swift; sourceTree = "<group>"; };
-		78401B3D1B99B40600468367 /* Link+Copying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+Copying.swift"; sourceTree = "<group>"; };
-		78401B3F1B99B55800468367 /* Link+Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+Object.swift"; sourceTree = "<group>"; };
 		78493B5F1BA08E8D00EF7893 /* NamespaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceManager.swift; sourceTree = "<group>"; };
 		78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceManagerTests.swift; sourceTree = "<group>"; };
 		787A8D1A1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+CustomDebugStringConvertible.swift"; sourceTree = "<group>"; };
 		78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentationTests.swift; sourceTree = "<group>"; };
+		78C736EE1D1D11460061A9EA /* Link+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+Equatable.swift"; sourceTree = "<group>"; };
 		78E0DA771B977B43007DC50C /* HypertextApplicationLanguage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HypertextApplicationLanguage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E0DA7A1B977B43007DC50C /* HypertextApplicationLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypertextApplicationLanguage.h; sourceTree = "<group>"; };
 		78E0DA7C1B977B43007DC50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,8 +94,7 @@
 				78E0DA7A1B977B43007DC50C /* HypertextApplicationLanguage.h */,
 				78493B5F1BA08E8D00EF7893 /* NamespaceManager.swift */,
 				7812331E1B985C4D000D929E /* Link.swift */,
-				78401B3F1B99B55800468367 /* Link+Object.swift */,
-				78401B3D1B99B40600468367 /* Link+Copying.swift */,
+				78C736EE1D1D11460061A9EA /* Link+Equatable.swift */,
 				787A8D1A1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift */,
 				782155C01B9F11A20085CEBC /* Representation.swift */,
 				782155C81B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift */,
@@ -247,10 +244,9 @@
 				78493B601BA08E8D00EF7893 /* NamespaceManager.swift in Sources */,
 				787A8D1B1BB2B8CD00AB2DFD /* Link+CustomDebugStringConvertible.swift in Sources */,
 				7812331F1B985C4D000D929E /* Link.swift in Sources */,
-				78401B401B99B55800468367 /* Link+Object.swift in Sources */,
-				78401B3E1B99B40600468367 /* Link+Copying.swift in Sources */,
 				782155C11B9F11A20085CEBC /* Representation.swift in Sources */,
 				782155C91B9F35FF0085CEBC /* NSDictionaryRepresentationParser.swift in Sources */,
+				78C736EF1D1D11460061A9EA /* Link+Equatable.swift in Sources */,
 				782155C51B9F34290085CEBC /* NSDictionaryRepresentationRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

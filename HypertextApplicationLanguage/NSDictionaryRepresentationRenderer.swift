@@ -46,7 +46,7 @@ public class NSDictionaryRepresentationRenderer {
       var links = [Link]()
       if !embedded {
         for (name, ref) in representation.namespaces {
-          let link = Link(rel: Link.CuriesRel, href: ref)
+          var link = Link(rel: Link.CuriesRel, href: ref)
           link.name = name
           links.append(link)
         }

@@ -1,6 +1,6 @@
-// HypertextApplicationLanguage Link+Copying.swift
+// HypertextApplicationLanguage Link+Equatable.swift
 //
-// Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -22,17 +22,14 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
+extension Link: Equatable {}
 
-extension Link: NSCopying {
-
-  public func copy(with zone: NSZone? = nil) -> AnyObject {
-    let link = Link(rel: rel, href: href)
-    link.name = name
-    link.title = title
-    link.hreflang = hreflang
-    link.profile = profile
-    return link
-  }
-
+/// - returns: Answers `true` if this `Link` compares equal to another.
+public func == (lhs: Link, rhs: Link) -> Bool {
+  return lhs.rel      == rhs.rel      &&
+         lhs.href     == rhs.href     &&
+         lhs.name     == rhs.name     &&
+         lhs.title    == rhs.title    &&
+         lhs.hreflang == rhs.hreflang &&
+         lhs.profile  == rhs.profile
 }

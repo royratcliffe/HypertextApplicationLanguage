@@ -22,12 +22,10 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
+extension Link: CustomDebugStringConvertible {
 
-extension Link {
-
-  public override var debugDescription: String {
-    var description = "\(super.debugDescription) rel=\(rel) href=\(href)"
+  public var debugDescription: String {
+    var description = "rel=\(rel) href=\(href)"
     if let name = name {
       description += " \(name)"
     }
