@@ -62,16 +62,16 @@ public class Representation: NSObject {
   // MARK: - Links
 
   public var link: Link? {
-    return linkFor(hrefOrRel: Link.SelfRel)
+    return link(forHrefOrRel: Link.SelfRel)
   }
 
-  public func linkFor(hrefOrRel: String) -> Link? {
-    return linksFor(hrefOrRel: hrefOrRel).first
+  public func link(forHrefOrRel hrefOrRel: String) -> Link? {
+    return links(forHrefOrRel: hrefOrRel).first
   }
 
   /// Answers the representation's links selected by either a hypertext
   /// reference or by a relation.
-  public func linksFor(hrefOrRel: String) -> [Link] {
+  public func links(forHrefOrRel hrefOrRel: String) -> [Link] {
     let rel = namespaceManager.curie(href: hrefOrRel) ?? hrefOrRel
     return links.filter { $0.rel == rel }
   }
@@ -88,7 +88,7 @@ public class Representation: NSObject {
 
   // MARK: - Properties
 
-  public func valueFor(name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
+  public func value(forName name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
     return properties[name] ?? defaultValue
   }
 
