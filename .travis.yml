@@ -1,11 +1,12 @@
 language: objective-c
 xcode_project: HypertextApplicationLanguage.xcodeproj
 xcode_scheme: HypertextApplicationLanguage
-osx_image: xcode7.1
+osx_image: xcode8
 
 # Important to specify the simulator SDK, otherwise Travis CI will attempt to
 # build for the real iPhone and fail due to code-signing issues.
-xcode_sdk: iphonesimulator9.1
+# See https://docs.travis-ci.com/user/languages/objective-c for details.
+xcode_sdk: iphonesimulator10.0
 
 before_install:
   - brew update
