@@ -13,26 +13,26 @@
 - Run SwiftLint
 - Xcode automatically removes asset tags
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.4...0.1.5)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.4...0.1.5)
 
 ## [0.1.4](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.4) (2016-03-23)
 
 - Swift 2.2 now includes debugDescription as part of NSObjectProtocol
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.3...0.1.4)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.3...0.1.4)
 
 ## [0.1.3](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.3) (2016-02-08)
 
 - Copyright 2016
 - Swift framework not Ruby gem; README fixes
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.2...0.1.3)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.2...0.1.3)
 
 ## [0.1.2](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.2) (2016-01-01)
 
 - Use nil for default value's default value
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.1...0.1.2)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.1...0.1.2)
 
 ## [0.1.1](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.1) (2016-01-01)
 
@@ -44,7 +44,7 @@
 - Travis CI configuration
 - Jazzy configuration
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.0...0.1.1)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.0...0.1.1)
 
 ## [0.1.0](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.0) (2015-11-14)
 
@@ -59,7 +59,7 @@
 - Make parse and render methods static
 - Fix: parse embedded representation
 
-[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1...0.1.0)
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1...0.1.0)
 
 ## [0.1](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1) (2015-11-03)
 
