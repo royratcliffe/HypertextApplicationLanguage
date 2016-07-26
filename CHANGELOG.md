@@ -1,5 +1,20 @@
 # Change Log
 
+## [0.1.5](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.5) (2016-07-25)
+
+- Disable SwiftLint errors
+- Fix statement position violations (SwiftLint)
+- Disable cyclomatic complexity warning
+- Xcode 8.x upgrade
+- Whole-module optimisation
+- Swift 2.3 migration
+- Merge branch 'feature/swift_lint' into develop
+- Disable valid documentation warnings
+- Run SwiftLint
+- Xcode automatically removes asset tags
+
+[Full Changelog](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.4...0.1.5)
+
 ## [0.1.4](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.4) (2016-03-23)
 
 - Swift 2.2 now includes debugDescription as part of NSObjectProtocol
