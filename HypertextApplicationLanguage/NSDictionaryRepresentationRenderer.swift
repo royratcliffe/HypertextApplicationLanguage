@@ -34,6 +34,7 @@ public class NSDictionaryRepresentationRenderer {
 
   /// Renders either a top-level representation or an embedded resource.
   private static func render(representation: Representation, embedded: Bool) -> NSDictionary {
+    // swiftlint:disable:previous cyclomatic_complexity
     let object = NSMutableDictionary()
 
     // Render the name-spaces and links but only if there are name-spaces and
@@ -55,8 +56,7 @@ public class NSDictionaryRepresentationRenderer {
       for link in links {
         if var links = linksForRel[link.rel] {
           links.append(link)
-        }
-        else {
+        } else {
           linksForRel[link.rel] = [link]
         }
       }
@@ -113,6 +113,7 @@ public class NSDictionaryRepresentationRenderer {
       object[Representation.Embedded] = embeddedObject
     }
 
+    // swiftlint:disable:next force_cast
     return object.copy() as! NSDictionary
   }
 

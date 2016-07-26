@@ -44,6 +44,7 @@ class LinkTests: XCTestCase {
     //
     //    link.rel = "other"
     //
+    // swiftlint:disable:next force_cast
     let otherLink = link.copy() as! Link
     XCTAssertFalse(link === otherLink)
     XCTAssertEqual(otherLink, link)
@@ -54,6 +55,7 @@ class LinkTests: XCTestCase {
 
   func testEqual() {
     XCTAssertFalse(link.isEqual(nil))
+    // swiftlint:disable:next force_cast
     let otherLink = link.copy() as! Link
     XCTAssertEqual(otherLink, link)
     otherLink.rel = "other"

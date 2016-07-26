@@ -117,8 +117,7 @@ public class Representation: NSObject {
       // mutable copy and reassign the dictionary entry after appending the new
       // embedded representation.
       representationsForRel[rel] = representations
-    }
-    else {
+    } else {
       representationsForRel[rel] = [representation]
     }
     return self
