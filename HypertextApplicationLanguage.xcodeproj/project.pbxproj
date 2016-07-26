@@ -177,7 +177,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 				TargetAttributes = {
 					78E0DA761B977B43007DC50C = {
