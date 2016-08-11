@@ -51,7 +51,7 @@ public class Representation {
   }
 
   public func with(name: String, ref: String) -> Representation {
-    let _ = namespaceManager.with(name: name, ref: ref)
+    _ = namespaceManager.with(name: name, ref: ref)
     return self
   }
 
