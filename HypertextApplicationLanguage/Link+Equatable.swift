@@ -1,6 +1,6 @@
-// HypertextApplicationLanguage Link+Object.swift
+// HypertextApplicationLanguage Link+Equatable.swift
 //
-// Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -22,19 +22,14 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
+extension Link: Equatable {}
 
-extension Link {
-
-  /// - returns: Answers `true` if this `Link` compares equal to another.
-  ///
-  /// They can never be equal by value if the other object is not even a member
-  /// of the same class or is `nil`. Value-equality requires type
-  /// equivalence. Subclasses can compare equal if their common values match.
-  public override func isEqual(object: AnyObject?) -> Bool {
-    guard let other = object as? Link else { return false }
-    let valuesForKeys = dictionaryWithValuesForKeys(Link.AttributeNames) as NSDictionary
-    return valuesForKeys.isEqual(other.dictionaryWithValuesForKeys(Link.AttributeNames))
-  }
-
+/// - returns: Answers `true` if this `Link` compares equal to another.
+public func == (lhs: Link, rhs: Link) -> Bool {
+  return lhs.rel      == rhs.rel      &&
+         lhs.href     == rhs.href     &&
+         lhs.name     == rhs.name     &&
+         lhs.title    == rhs.title    &&
+         lhs.hreflang == rhs.hreflang &&
+         lhs.profile  == rhs.profile
 }

@@ -29,7 +29,7 @@ public class NSDictionaryRepresentationRenderer {
   /// Renders a representation to a dictionary.
   /// - returns: The resulting dictionary representation.
   public static func render(representation: Representation) -> NSDictionary {
-    return render(representation, embedded: false)
+    return render(representation: representation, embedded: false)
   }
 
   /// Renders either a top-level representation or an embedded resource.
@@ -46,12 +46,12 @@ public class NSDictionaryRepresentationRenderer {
       var links = [Link]()
       if !embedded {
         for (name, ref) in representation.namespaces {
-          let link = Link(rel: Link.CuriesRel, href: ref)
+          var link = Link(rel: Link.CuriesRel, href: ref)
           link.name = name
           links.append(link)
         }
       }
-      links.appendContentsOf(representation.links)
+      links.append(contentsOf: representation.links)
       var linksForRel = [String: [Link]]()
       for link in links {
         if var links = linksForRel[link.rel] {
@@ -96,7 +96,7 @@ public class NSDictionaryRepresentationRenderer {
     // This makes some assumptions about the representation properties. It
     // assumes that the property values are primitive types: strings, numbers,
     // booleans. They should never be dictionaries or custom classes.
-    object.addEntriesFromDictionary(representation.properties)
+    object.addEntries(from: representation.properties)
 
     // Render embedded resource representations. Each representation retains
     // zero or more sub-representations by their relation. The relation maps to
@@ -106,7 +106,7 @@ public class NSDictionaryRepresentationRenderer {
       let embeddedObject = NSMutableDictionary()
       for (rel, representations) in representation.representationsForRel {
         let objects = representations.map { representation in
-          render(representation, embedded: true)
+          render(representation: representation, embedded: true)
         }
         embeddedObject[rel] = objects.count == 1 ? objects.first : objects
       }
