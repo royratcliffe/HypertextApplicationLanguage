@@ -36,6 +36,8 @@ public class Representation {
 
   let namespaceManager = NamespaceManager()
 
+  public init() {}
+
   public var links = [Link]()
 
   public var properties = [String: AnyObject]()
