@@ -1,4 +1,4 @@
-// HypertextApplicationLanguage Link+Object.swift
+// HypertextApplicationLanguage Link+CustomDebugStringConvertible.swift
 //
 // Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,19 +22,23 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
+extension Link: CustomDebugStringConvertible {
 
-extension Link {
-
-  /// - returns: Answers `true` if this `Link` compares equal to another.
-  ///
-  /// They can never be equal by value if the other object is not even a member
-  /// of the same class or is `nil`. Value-equality requires type
-  /// equivalence. Subclasses can compare equal if their common values match.
-  public override func isEqual(object: AnyObject?) -> Bool {
-    guard let other = object as? Link else { return false }
-    let valuesForKeys = dictionaryWithValuesForKeys(Link.AttributeNames) as NSDictionary
-    return valuesForKeys.isEqual(other.dictionaryWithValuesForKeys(Link.AttributeNames))
+  public var debugDescription: String {
+    var description = "rel=\(rel) href=\(href)"
+    if let name = name {
+      description += " \(name)"
+    }
+    if let title = title {
+      description += " \(title)"
+    }
+    if let hreflang = hreflang {
+      description += " \(hreflang)"
+    }
+    if let profile = profile {
+      description += " \(profile)"
+    }
+    return description
   }
 
 }

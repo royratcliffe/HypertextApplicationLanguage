@@ -22,8 +22,6 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
-
 /// Links belong to representations; a representation retains zero or more
 /// links. Each link gives a hypertext reference for a relation, at least. Some
 /// links provide more information.
@@ -37,7 +35,7 @@ import Foundation
 /// hypertext-application-language (HAL) link. It does not support
 /// immutability. All links and their attributes remain mutable, even after
 /// attaching to a representation.
-public class Link: NSObject {
+public struct Link {
 
   /// Creates a new mutable link.
   /// - returns: Answers a newly initialised link.

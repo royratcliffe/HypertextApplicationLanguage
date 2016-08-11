@@ -1,4 +1,4 @@
-// HypertextApplicationLanguage Link+CustomDebugStringConvertible.swift
+// HypertextApplicationLanguageTests LinkTests.swift
 //
 // Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,25 +22,33 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
+import XCTest
 
-extension Link {
+// Do not import as testable, i.e. skip the `@testable` keyword prefix when
+// importing. It makes the internal interface visible. Such breaks the
+// immutability of `Link` attributes because the tests can see the internal
+// setters.
+import HypertextApplicationLanguage
 
-  public override var debugDescription: String {
-    var description = "\(super.debugDescription) rel=\(rel) href=\(href)"
-    if let name = name {
-      description += " \(name)"
-    }
-    if let title = title {
-      description += " \(title)"
-    }
-    if let hreflang = hreflang {
-      description += " \(hreflang)"
-    }
-    if let profile = profile {
-      description += " \(profile)"
-    }
-    return description
+class LinkTests: XCTestCase {
+
+  let link = Link(rel: "rel", href: "/path/to/rel")
+
+  func testCreate() {
+    XCTAssertEqual("rel", link.rel)
+    XCTAssertEqual("/path/to/rel", link.href)
+  }
+
+  func testEqual() {
+    let otherLink = link
+    XCTAssertEqual(otherLink, link)
+  }
+
+  func testNotEqual() {
+    var otherLink = link
+    XCTAssertEqual(otherLink, link)
+    otherLink.hreflang = "en"
+    XCTAssertNotEqual(otherLink, link)
   }
 
 }

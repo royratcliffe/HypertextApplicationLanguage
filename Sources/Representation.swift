@@ -22,15 +22,13 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
-
 /// Represents a resource. This includes sub-resources which also have their own
 /// representation. Representations have links, properties and sub-resources.
 ///
 /// Resource is the name of a representation embedded within another
 /// super-representation. Representations have zero or resources. They will
 /// appear in the rendered results as embedded resources.
-public class Representation: NSObject {
+public class Representation {
 
   public static let Links = "_links"
 
@@ -46,53 +44,51 @@ public class Representation: NSObject {
   /// representations, zero or more.
   public var representationsForRel = [String: [Representation]]()
 
-  public override init() {}
-
   // MARK: - Namespaces
 
   public var namespaces: [String: String] {
     return namespaceManager.namespaces
   }
 
-  public func withNamespace(name: String, ref: String) -> Representation {
-    namespaceManager.withNamespace(name, ref: ref)
+  public func with(name: String, ref: String) -> Representation {
+    let _ = namespaceManager.with(name: name, ref: ref)
     return self
   }
 
   // MARK: - Links
 
   public var link: Link? {
-    return linkFor(Link.SelfRel)
+    return link(forHrefOrRel: Link.SelfRel)
   }
 
-  public func linkFor(hrefOrRel: String) -> Link? {
-    return linksFor(hrefOrRel).first
+  public func link(forHrefOrRel hrefOrRel: String) -> Link? {
+    return links(forHrefOrRel: hrefOrRel).first
   }
 
   /// Answers the representation's links selected by either a hypertext
   /// reference or by a relation.
-  public func linksFor(hrefOrRel: String) -> [Link] {
-    let rel = namespaceManager.curie(hrefOrRel) ?? hrefOrRel
+  public func links(forHrefOrRel hrefOrRel: String) -> [Link] {
+    let rel = namespaceManager.curie(href: hrefOrRel) ?? hrefOrRel
     return links.filter { $0.rel == rel }
   }
 
   /// Adds a link to this representation.
-  public func withLink(link: Link) -> Representation {
+  public func with(link: Link) -> Representation {
     links.append(link)
     return self
   }
 
-  public func withLink(rel: String, href: String) -> Representation {
-    return withLink(Link(rel: rel, href: href))
+  public func with(rel: String, href: String) -> Representation {
+    return with(link: Link(rel: rel, href: href))
   }
 
   // MARK: - Properties
 
-  public func valueFor(name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
+  public func value(forName name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
     return properties[name] ?? defaultValue
   }
 
-  public func withProperty(name: String, value: AnyObject) -> Representation {
+  public func with(name: String, value: AnyObject) -> Representation {
     properties[name] = value
     return self
   }
@@ -109,7 +105,7 @@ public class Representation: NSObject {
 
   /// Associates a given embedded representation with this representation by a
   /// given relation.
-  public func withRepresentation(rel: String, representation: Representation) -> Representation {
+  public func with(rel: String, representation: Representation) -> Representation {
     if var representations = representationsForRel[rel] {
       representations.append(representation)
       // In Swift, the original dictionary accessor answers with a copy of the
