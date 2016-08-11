@@ -22,8 +22,6 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
-
 /// Handles *compact* URIs, a.k.a. CURIEs. Representations and representation
 /// factories have CURIEs handled by a name-space manager instance.
 public class NamespaceManager {
