@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.2.0](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.0) (2016-08-11)
+
+- Renamed sub-folders to Sources and Tests
+- Merge branch 'feature/swift_3_0' into develop
+- Removed redundant Foundation import
+- Convert to Swift 3.0; adds SWIFT_VERSION=3.0
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.1.5...0.2.0)
+
 ## [0.1.5](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.1.5) (2016-07-25)
 
 - Disable SwiftLint errors
