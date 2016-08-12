@@ -1,9 +1,13 @@
 # Change Log
 
-## [0.2.1](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.1) (2016-08-12)
+## [0.2.2](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.2) (2016-08-12)
 
 - Fix Travis configuration
-- Patch bump to 0.2.1
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.1...0.2.2)
+
+## [0.2.1](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.1) (2016-08-11)
+
 - Representation needs a public initialiser
 - Swift let underscore equals to underscore equals
 
