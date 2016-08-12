@@ -1,13 +1,19 @@
 language: objective-c
-xcode_project: HypertextApplicationLanguage.xcodeproj
-xcode_scheme: HypertextApplicationLanguage
 osx_image: xcode8
+
+before_install:
+  - gem install xcpretty
+
+env:
+  matrix:
+    - DESTINATION="name=iPhone 6s"
+
+script:
+  - xcodebuild -sdk "$TRAVIS_XCODE_SDK" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$DESTINATION" test | xcpretty && exit ${PIPESTATUS[0]}
 
 # Important to specify the simulator SDK, otherwise Travis CI will attempt to
 # build for the real iPhone and fail due to code-signing issues.
 # See https://docs.travis-ci.com/user/languages/objective-c for details.
-xcode_sdk: iphonesimulator10.0
+xcode_sdk: iphonesimulator
 
-before_install:
-  - brew update
-  - brew uninstall xctool && brew install --HEAD xctool
+xcode_scheme: HypertextApplicationLanguage
