@@ -22,7 +22,7 @@
  *
  ******************************************************************************/
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 FOUNDATION_EXPORT double HypertextApplicationLanguageVersionNumber;
 FOUNDATION_EXPORT const unsigned char HypertextApplicationLanguageVersionString[];
