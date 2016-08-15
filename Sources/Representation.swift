@@ -44,7 +44,7 @@ public class Representation {
 
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
-  public var representationsForRel = [String: [Representation]]()
+  var representationsForRel = [String: [Representation]]()
 
   /// All the relations embedded within this representation.
   public var rels: [String] {
