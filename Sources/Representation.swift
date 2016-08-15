@@ -46,6 +46,11 @@ public class Representation {
   /// representations, zero or more.
   public var representationsForRel = [String: [Representation]]()
 
+  /// All the relations embedded within this representation.
+  public var rels: [String] {
+    return Array(representationsForRel.keys)
+  }
+
   // MARK: - Namespaces
 
   public var namespaces: [String: String] {
