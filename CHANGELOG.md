@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.2.3](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.3) (2016-08-15)
+
+- Property representationsForRel no longer public
+- New computed property Representation.representations(for:)
+- New computed property Representation.rels
+- Use @import syntax
+- Simplify method signatures to link(for:), links(for:) and value(for:)
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.2...0.2.3)
+
 ## [0.2.2](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.2) (2016-08-12)
 
 - Fix Travis configuration
