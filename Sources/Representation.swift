@@ -44,7 +44,12 @@ public class Representation {
 
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
-  public var representationsForRel = [String: [Representation]]()
+  var representationsForRel = [String: [Representation]]()
+
+  /// All the relations embedded within this representation.
+  public var rels: [String] {
+    return Array(representationsForRel.keys)
+  }
 
   // MARK: - Namespaces
 
@@ -60,16 +65,16 @@ public class Representation {
   // MARK: - Links
 
   public var link: Link? {
-    return link(forHrefOrRel: Link.SelfRel)
+    return link(for: Link.SelfRel)
   }
 
-  public func link(forHrefOrRel hrefOrRel: String) -> Link? {
-    return links(forHrefOrRel: hrefOrRel).first
+  public func link(for hrefOrRel: String) -> Link? {
+    return links(for: hrefOrRel).first
   }
 
   /// Answers the representation's links selected by either a hypertext
   /// reference or by a relation.
-  public func links(forHrefOrRel hrefOrRel: String) -> [Link] {
+  public func links(for hrefOrRel: String) -> [Link] {
     let rel = namespaceManager.curie(href: hrefOrRel) ?? hrefOrRel
     return links.filter { $0.rel == rel }
   }
@@ -86,7 +91,7 @@ public class Representation {
 
   // MARK: - Properties
 
-  public func value(forName name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
+  public func value(for name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
     return properties[name] ?? defaultValue
   }
 
@@ -103,6 +108,13 @@ public class Representation {
   /// super-representation that having been stripped away.
   public var representations: [Representation] {
     return representationsForRel.values.flatMap { $0 }
+  }
+
+  /// - parameter rel: Relation name.
+  /// - returns: Embedded representations for the given relation. Answers `nil`
+  ///   if the relation does not exist.
+  public func representations(for rel: String) -> [Representation]? {
+    return representationsForRel[rel]
   }
 
   /// Associates a given embedded representation with this representation by a
