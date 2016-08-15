@@ -110,6 +110,13 @@ public class Representation {
     return representationsForRel.values.flatMap { $0 }
   }
 
+  /// - parameter rel: Relation name.
+  /// - returns: Embedded representations for the given relation. Answers `nil`
+  ///   if the relation does not exist.
+  public func representations(for rel: String) -> [Representation]? {
+    return representationsForRel[rel]
+  }
+
   /// Associates a given embedded representation with this representation by a
   /// given relation.
   public func with(rel: String, representation: Representation) -> Representation {
