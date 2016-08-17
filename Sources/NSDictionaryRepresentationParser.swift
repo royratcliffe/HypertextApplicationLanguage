@@ -40,7 +40,7 @@ public class NSDictionaryRepresentationParser {
     // dictionary with a name and a hypertext reference.
     if let linksObject = object[Representation.Links] as? NSDictionary {
       if let curieObjects = linksObject[Link.CuriesRel] {
-        for object in NSDictionaryRepresentationParser.objects(from: curieObjects) {
+        for object in NSDictionaryRepresentationParser.objects(from: curieObjects as AnyObject) {
           // Both the name and the hypertext reference must have string type;
           // there is no scope for representing references except using their
           // string form. Represent with strings, otherwise the parser ignores
@@ -60,7 +60,7 @@ public class NSDictionaryRepresentationParser {
       for (key, value) in linksObject {
         guard let rel = key as? String else { continue }
         if rel == Link.CuriesRel { continue }
-        for object in NSDictionaryRepresentationParser.objects(from: value) {
+        for object in NSDictionaryRepresentationParser.objects(from: value as AnyObject) {
           // The link object requires at least a hypertext reference. All links
           // require a relation and a reference. Other attributes remain
           // optional.
@@ -95,7 +95,7 @@ public class NSDictionaryRepresentationParser {
     for (key, value) in object {
       guard let name = key as? String else { continue }
       if [Representation.Links, Representation.Embedded].contains(name) { continue }
-      _ = representation.with(name: name, value: value)
+      _ = representation.with(name: name, value: value as AnyObject)
     }
 
     if let embedded = object[Representation.Embedded] as? NSDictionary {
@@ -104,7 +104,7 @@ public class NSDictionaryRepresentationParser {
         // The relation key must be a string. Turn the value into an array of
         // dictionaries, parsing an embedded representation from each
         // dictionary.
-        for object in NSDictionaryRepresentationParser.objects(from: value) {
+        for object in NSDictionaryRepresentationParser.objects(from: value as AnyObject) {
           let embeddedRepresentation = Representation()
           parse(representation: embeddedRepresentation, object: object)
           _ = representation.with(rel: rel, representation: embeddedRepresentation)

@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.4](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.4) (2016-08-16)
+
+- Force down-cast from mutable to non-mutable dictionary after copy
+- Swift (Xcode 8 beta 6, swiftlang-800.0.43.6) needs `as AnyObject` down-casts
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.3...0.2.4)
+
 ## [0.2.3](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.3) (2016-08-15)
 
 - Property representationsForRel no longer public
