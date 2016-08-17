@@ -1,6 +1,15 @@
 # Change Log
 
-## [0.2.4](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.4) (2016-08-16)
+## [0.2.5](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.5) (2016-08-17)
+
+- Fix change-log entry date
+- Revert to copying as Any
+- Removed redundant `as Any` cast
+- AnyObject to Any
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.4...0.2.5)
+
+## [0.2.4](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.4) (2016-08-17)
 
 - Force down-cast from mutable to non-mutable dictionary after copy
 - Swift (Xcode 8 beta 6, swiftlang-800.0.43.6) needs `as AnyObject` down-casts

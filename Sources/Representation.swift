@@ -40,7 +40,7 @@ public class Representation {
 
   public var links = [Link]()
 
-  public var properties = [String: AnyObject]()
+  public var properties = [String: Any]()
 
   /// Dictionary of string-array pairs. The arrays contain embedded
   /// representations, zero or more.
@@ -91,11 +91,11 @@ public class Representation {
 
   // MARK: - Properties
 
-  public func value(for name: String, defaultValue: AnyObject? = nil) -> AnyObject? {
+  public func value(for name: String, defaultValue: Any? = nil) -> Any? {
     return properties[name] ?? defaultValue
   }
 
-  public func with(name: String, value: AnyObject) -> Representation {
+  public func with(name: String, value: Any) -> Representation {
     properties[name] = value
     return self
   }
