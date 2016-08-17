@@ -61,7 +61,7 @@ public class NSDictionaryRepresentationRenderer {
         }
       }
       for (rel, links) in linksForRel {
-        let linkObjects = links.map { link -> AnyObject in
+        let linkObjects = links.map { link -> Any in
           // Render a link as a dictionary. Importantly, the following does not
           // render the link relation; it only renders the link content. The
           // relation appears in the rendered output as the key, not as part of
