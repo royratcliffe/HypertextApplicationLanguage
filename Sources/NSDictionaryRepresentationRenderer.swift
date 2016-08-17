@@ -82,8 +82,7 @@ public class NSDictionaryRepresentationRenderer {
             linkObject[Link.Profile] = profile
           }
 
-          // swiftlint:disable:next force_cast
-          return linkObject.copy() as! NSDictionary
+          return linkObject.copy()
         }
         linksObject[rel] = linkObjects.count == 1 ? linkObjects.first : linkObjects
       }
