@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.7](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.7) (2016-08-18)
+
+- Work around bug using KVC setValue(forKey:)
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.6...0.2.7)
+
 ## [0.2.6](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.6) (2016-08-18)
 
 - Increase line-length warning and error levels
