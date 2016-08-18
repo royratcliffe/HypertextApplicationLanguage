@@ -68,32 +68,33 @@ public class NSDictionaryRepresentationRenderer {
           // the dictionary value paired with the key.
           //
           // Work around a new bug in the Foundation framework. Avoid using the
-          // `[]=` operator but rather use the setter method setObject(forKey:
-          // as NSString) when setting values for Next Step
+          // `[]=` operator but rather use the Key-Value Coding method
+          // setValue(forKey:) when setting values for Next Step
           // dictionaries. Otherwise the dictionary will contain Swift values
           // for which `JSONSerialization` will subsequently throw an invalid
-          // argument exception.
+          // argument exception. Using `NSMutableDictionary.setObject(forKey:)`
+          // produces the same bug.
           let linkObject = NSMutableDictionary()
-          linkObject.setObject(link.href, forKey: Link.Href as NSString)
+          linkObject.setValue(link.href, forKey: Link.Href)
 
           if let name = link.name {
-            linkObject.setObject(name, forKey: Link.Name as NSString)
+            linkObject.setValue(name, forKey: Link.Name)
           }
           if let title = link.title {
-            linkObject.setObject(title, forKey: Link.Title as NSString)
+            linkObject.setValue(title, forKey: Link.Title)
           }
           if let hreflang = link.hreflang {
-            linkObject.setObject(hreflang, forKey: Link.Hreflang as NSString)
+            linkObject.setValue(hreflang, forKey: Link.Hreflang)
           }
           if let profile = link.profile {
-            linkObject.setObject(profile, forKey: Link.Profile as NSString)
+            linkObject.setValue(profile, forKey: Link.Profile)
           }
 
           return linkObject.copy()
         }
-        linksObject.setObject(linkObjects.count == 1 ? linkObjects.first : linkObjects, forKey: rel as NSString)
+        linksObject.setValue(linkObjects.count == 1 ? linkObjects.first : linkObjects, forKey: rel)
       }
-      object.setObject(linksObject.copy(), forKey: Representation.Links as NSString)
+      object.setValue(linksObject.copy(), forKey: Representation.Links)
     }
 
     // Merge the representation's properties. Properties live at the root of the
@@ -115,9 +116,9 @@ public class NSDictionaryRepresentationRenderer {
         let objects = representations.map { representation in
           render(representation: representation, embedded: true)
         }
-        embeddedObject.setObject(objects.count == 1 ? objects.first : objects, forKey: rel as NSString)
+        embeddedObject.setValue(objects.count == 1 ? objects.first : objects, forKey: rel)
       }
-      object.setObject(embeddedObject, forKey: Representation.Embedded as NSString)
+      object.setValue(embeddedObject, forKey: Representation.Embedded)
     }
 
     // swiftlint:disable:next force_cast
