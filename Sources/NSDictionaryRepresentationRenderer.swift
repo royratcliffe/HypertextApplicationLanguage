@@ -66,27 +66,34 @@ public class NSDictionaryRepresentationRenderer {
           // render the link relation; it only renders the link content. The
           // relation appears in the rendered output as the key, not as part of
           // the dictionary value paired with the key.
+          //
+          // Work around a new bug in the Foundation framework. Avoid using the
+          // `[]=` operator but rather use the setter method setObject(forKey:
+          // as NSString) when setting values for Next Step
+          // dictionaries. Otherwise the dictionary will contain Swift values
+          // for which `JSONSerialization` will subsequently throw an invalid
+          // argument exception.
           let linkObject = NSMutableDictionary()
-          linkObject[Link.Href] = link.href
+          linkObject.setObject(link.href, forKey: Link.Href as NSString)
 
           if let name = link.name {
-            linkObject[Link.Name] = name
+            linkObject.setObject(name, forKey: Link.Name as NSString)
           }
           if let title = link.title {
-            linkObject[Link.Title] = title
+            linkObject.setObject(title, forKey: Link.Title as NSString)
           }
           if let hreflang = link.hreflang {
-            linkObject[Link.Hreflang] = hreflang
+            linkObject.setObject(hreflang, forKey: Link.Hreflang as NSString)
           }
           if let profile = link.profile {
-            linkObject[Link.Profile] = profile
+            linkObject.setObject(profile, forKey: Link.Profile as NSString)
           }
 
           return linkObject.copy()
         }
-        linksObject[rel] = linkObjects.count == 1 ? linkObjects.first : linkObjects
+        linksObject.setObject(linkObjects.count == 1 ? linkObjects.first : linkObjects, forKey: rel as NSString)
       }
-      object[Representation.Links] = linksObject.copy()
+      object.setObject(linksObject.copy(), forKey: Representation.Links as NSString)
     }
 
     // Merge the representation's properties. Properties live at the root of the
@@ -108,9 +115,9 @@ public class NSDictionaryRepresentationRenderer {
         let objects = representations.map { representation in
           render(representation: representation, embedded: true)
         }
-        embeddedObject[rel] = objects.count == 1 ? objects.first : objects
+        embeddedObject.setObject(objects.count == 1 ? objects.first : objects, forKey: rel as NSString)
       }
-      object[Representation.Embedded] = embeddedObject
+      object.setObject(embeddedObject, forKey: Representation.Embedded as NSString)
     }
 
     // swiftlint:disable:next force_cast

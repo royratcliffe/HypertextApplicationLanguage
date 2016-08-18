@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.6](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.6) (2016-08-18)
+
+- Increase line-length warning and error levels
+- Work around `NSMutableDictionary.[]=` bug
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.5...0.2.6)
+
 ## [0.2.5](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.5) (2016-08-17)
 
 - Fix change-log entry date
