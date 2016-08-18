@@ -3,3 +3,10 @@ disabled_rules:
   # summary is more important than leveraging keywords." See
   # https://github.com/realm/SwiftLint/issues/284 for discussion.
   - valid_docs
+
+# Extend the line length warning and error levels by 50%; the default 100
+# columns gives too many warnings. Warn about line lengths at 150 columns;
+# trigger errors at 300.
+line_length:
+  warning: 150
+  error: 300
