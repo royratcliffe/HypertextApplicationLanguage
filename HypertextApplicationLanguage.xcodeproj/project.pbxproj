@@ -70,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		789AF5771E53603800FE57DD /* HypertextApplicationLanguageTests */ = {
+			isa = PBXGroup;
+			children = (
+				78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */,
+				78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */,
+				781233201B985D13000D929E /* LinkTests.swift */,
+				78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */,
+			);
+			path = HypertextApplicationLanguageTests;
+			sourceTree = "<group>";
+		};
 		78E0DA6D1B977B43007DC50C = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +118,7 @@
 		78E0DA851B977B43007DC50C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */,
-				78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */,
-				781233201B985D13000D929E /* LinkTests.swift */,
-				78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */,
+				789AF5771E53603800FE57DD /* HypertextApplicationLanguageTests */,
 				78E0DA881B977B43007DC50C /* Info.plist */,
 			);
 			path = Tests;
