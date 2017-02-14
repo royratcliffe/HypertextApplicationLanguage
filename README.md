@@ -1,5 +1,4 @@
 [![Travis](https://img.shields.io/travis/royratcliffe/HypertextApplicationLanguage/master.svg)](https://travis-ci.org/royratcliffe/HypertextApplicationLanguage)
-
 [![CocoaPods](https://img.shields.io/cocoapods/v/HypertextApplicationLanguage.svg)](https://cocoapods.org/pods/HypertextApplicationLanguage)
 [![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/HypertextApplicationLanguage.svg)](http://cocoadocs.org/docsets/HypertextApplicationLanguage)
 
