@@ -70,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		789AF5771E53603800FE57DD /* HypertextApplicationLanguageTests */ = {
+			isa = PBXGroup;
+			children = (
+				78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */,
+				78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */,
+				781233201B985D13000D929E /* LinkTests.swift */,
+				78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */,
+			);
+			path = HypertextApplicationLanguageTests;
+			sourceTree = "<group>";
+		};
 		78E0DA6D1B977B43007DC50C = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +118,7 @@
 		78E0DA851B977B43007DC50C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				78E0DA861B977B43007DC50C /* HypertextApplicationLanguageTests.swift */,
-				78493B611BA08F8C00EF7893 /* NamespaceManagerTests.swift */,
-				781233201B985D13000D929E /* LinkTests.swift */,
-				78A330F91BAD18A20080B5C1 /* RepresentationTests.swift */,
+				789AF5771E53603800FE57DD /* HypertextApplicationLanguageTests */,
 				78E0DA881B977B43007DC50C /* Info.plist */,
 			);
 			path = Tests;
@@ -174,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 				TargetAttributes = {
 					78E0DA761B977B43007DC50C = {
@@ -288,8 +296,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -336,8 +346,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -368,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0;
@@ -387,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0;

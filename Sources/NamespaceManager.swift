@@ -45,6 +45,7 @@ public class NamespaceManager {
   /// - parameter ref: Gives the CURIE's relative reference. It must include the
   ///   `{rel}` placeholder identifying where to substitute the CURIE argument,
   ///   the value that replaces the placeholder.
+  @discardableResult
   public func with(name: String, ref: String) -> NamespaceManager {
     refForName[name] = ref
     return self

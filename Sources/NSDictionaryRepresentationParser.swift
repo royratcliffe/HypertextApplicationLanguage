@@ -51,7 +51,7 @@ public class NSDictionaryRepresentationParser {
           // contains the `{rel}` token as a placeholder for substitution.
           guard let name = object[Link.Name] as? String else { continue }
           guard let ref = object[Link.Href] as? String else { continue }
-          _ = representation.with(name: name, ref: ref)
+          representation.with(name: name, ref: ref)
         }
       }
 
@@ -85,7 +85,7 @@ public class NSDictionaryRepresentationParser {
             link.profile = profile
           }
 
-          _ = representation.with(link: link)
+          representation.with(link: link)
         }
       }
     }
@@ -95,7 +95,7 @@ public class NSDictionaryRepresentationParser {
     for (key, value) in object {
       guard let name = key as? String else { continue }
       if [Representation.Links, Representation.Embedded].contains(name) { continue }
-      _ = representation.with(name: name, value: value)
+      representation.with(name: name, value: value)
     }
 
     if let embedded = object[Representation.Embedded] as? NSDictionary {
@@ -107,7 +107,7 @@ public class NSDictionaryRepresentationParser {
         for object in NSDictionaryRepresentationParser.objects(from: value) {
           let embeddedRepresentation = Representation()
           parse(representation: embeddedRepresentation, object: object)
-          _ = representation.with(rel: rel, representation: embeddedRepresentation)
+          representation.with(rel: rel, representation: embeddedRepresentation)
         }
       }
     }

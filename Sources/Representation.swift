@@ -57,8 +57,9 @@ public class Representation {
     return namespaceManager.namespaces
   }
 
+  @discardableResult
   public func with(name: String, ref: String) -> Representation {
-    _ = namespaceManager.with(name: name, ref: ref)
+    namespaceManager.with(name: name, ref: ref)
     return self
   }
 
@@ -80,6 +81,7 @@ public class Representation {
   }
 
   /// Adds a link to this representation.
+  @discardableResult
   public func with(link: Link) -> Representation {
     links.append(link)
     return self
@@ -95,6 +97,7 @@ public class Representation {
     return properties[name] ?? defaultValue
   }
 
+  @discardableResult
   public func with(name: String, value: Any) -> Representation {
     properties[name] = value
     return self
@@ -119,6 +122,7 @@ public class Representation {
 
   /// Associates a given embedded representation with this representation by a
   /// given relation.
+  @discardableResult
   public func with(rel: String, representation: Representation) -> Representation {
     if var representations = representationsForRel[rel] {
       representations.append(representation)
