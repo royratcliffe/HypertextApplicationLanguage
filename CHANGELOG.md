@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.3.0](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.3.0) (2017-02-15)
+
+- Merge branch 'feature/swift_package_manager' into develop
+- Git ignores build and package products
+- Support Swift package manager
+- Keep all the shields on one line
+- Added SVG image shields to README
+- Allow discardable results for `with` methods
+- Xcode 8.2 adjustments, including code-sign disabling
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.2.7...0.3.0)
+
 ## [0.2.7](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.2.7) (2016-08-18)
 
 - Work around bug using KVC setValue(forKey:)
