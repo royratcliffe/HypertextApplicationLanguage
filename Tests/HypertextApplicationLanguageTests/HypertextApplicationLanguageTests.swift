@@ -31,7 +31,11 @@ class HypertextApplicationLanguageTests: XCTestCase {
   /// bundle. Fails (with a bang) if it cannot find the corresponding resource.
   func data(forJSONResource name: String) -> Data {
     let bundle = Bundle(for: type(of: self))
-    let url = bundle.url(forResource: name, withExtension: "json")!
+    let url = bundle.url(forResource: name, withExtension: "json") ?? URL(fileURLWithPath: #file)
+      .deletingLastPathComponent()
+      .appendingPathComponent("Fixtures", isDirectory: true)
+      .appendingPathComponent(name)
+      .appendingPathExtension("json")
     // swiftlint:disable:next force_try
     return try! Data(contentsOf: url)
   }
