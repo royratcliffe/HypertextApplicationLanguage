@@ -30,7 +30,7 @@ class HypertextApplicationLanguageTests: XCTestCase {
   /// Loads and returns a string from a JSON string file located within the test
   /// bundle. Fails (with a bang) if it cannot find the corresponding resource.
   func data(forJSONResource name: String) -> Data {
-    let bundle = Bundle(for: RepresentationTests.self)
+    let bundle = Bundle(for: type(of: self))
     let url = bundle.url(forResource: name, withExtension: "json")!
     // swiftlint:disable:next force_try
     return try! Data(contentsOf: url)
