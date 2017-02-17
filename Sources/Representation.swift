@@ -87,6 +87,7 @@ public class Representation {
     return self
   }
 
+  @discardableResult
   public func with(rel: String, href: String) -> Representation {
     return with(link: Link(rel: rel, href: href))
   }
