@@ -22,14 +22,16 @@
 //
 //------------------------------------------------------------------------------
 
-extension Link: Equatable {}
+extension Link: Equatable {
 
-/// - returns: Answers `true` if this `Link` compares equal to another.
-public func == (lhs: Link, rhs: Link) -> Bool {
-  return lhs.rel      == rhs.rel      &&
-         lhs.href     == rhs.href     &&
-         lhs.name     == rhs.name     &&
-         lhs.title    == rhs.title    &&
-         lhs.hreflang == rhs.hreflang &&
-         lhs.profile  == rhs.profile
+  /// - returns: Answers `true` if this `Link` compares equal to another.
+  public static func == (lhs: Link, rhs: Link) -> Bool {
+    return lhs.rel      == rhs.rel      &&
+           lhs.href     == rhs.href     &&
+           lhs.name     == rhs.name     &&
+           lhs.title    == rhs.title    &&
+           lhs.hreflang == rhs.hreflang &&
+           lhs.profile  == rhs.profile
+  }
+
 }
