@@ -22,6 +22,8 @@
 //
 //------------------------------------------------------------------------------
 
+import Foundation
+
 /// Links belong to representations; a representation retains zero or more
 /// links. Each link gives a hypertext reference for a relation, at least. Some
 /// links provide more information.
