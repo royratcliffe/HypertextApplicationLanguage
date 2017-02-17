@@ -55,7 +55,8 @@ public struct Link {
   /// the path.
   public var href: String
 
-  /// - returns: True if the link's hypertext reference contains at least one template.
+  /// Works out if the link comprises a template form of reference. True if the
+  /// link's hypertext reference contains at least one template pattern.
   public var templated: Bool {
     struct Templated {
       // swiftlint:disable:next force_try
