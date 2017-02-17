@@ -55,6 +55,16 @@ public struct Link {
   /// the path.
   public var href: String
 
+  /// - returns: True if the link's hypertext reference contains at least one template.
+  public var templated: Bool {
+    struct Templated {
+      // swiftlint:disable:next force_try
+      static let expression = try! NSRegularExpression(pattern: "\\{.+\\}")
+    }
+    let range = NSRange(location: 0, length: href.characters.count)
+    return Templated.expression.numberOfMatches(in: href, range: range) > 0
+  }
+
   // Optional attributes
 
   public var name: String?
@@ -77,6 +87,7 @@ public struct Link {
   public static let Title = "title"
   public static let Hreflang = "hreflang"
   public static let Profile = "profile"
+  public static let Templated = "templated"
 
   /// Array of attribute names including those required and those optional.
   public static let AttributeNames = [
@@ -89,6 +100,7 @@ public struct Link {
     Title,
     Hreflang,
     Profile,
+    Templated,
   ]
 
   // Special link relations

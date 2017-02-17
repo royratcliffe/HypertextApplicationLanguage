@@ -82,6 +82,9 @@ extension Representation {
           if let profile = link.profile {
             linkObject[Link.Profile] = profile
           }
+          if link.templated {
+            linkObject[Link.Templated] = true
+          }
 
           return linkObject
         }
