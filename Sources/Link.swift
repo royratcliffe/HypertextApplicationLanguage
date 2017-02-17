@@ -77,6 +77,32 @@ public struct Link {
 
   public var profile: String?
 
+  /// Constructs a new link based on this link but with the name changed.
+  /// - parameter name: Optional name to replace any existing name.
+  public func with(name: String?) -> Link {
+    var link = self
+    link.name = name
+    return link
+  }
+
+  public func with(title: String?) -> Link {
+    var link = self
+    link.title = title
+    return link
+  }
+
+  public func with(hreflang: String?) -> Link {
+    var link = self
+    link.hreflang = hreflang
+    return link
+  }
+
+  public func with(profile: String?) -> Link {
+    var link = self
+    link.profile = profile
+    return link
+  }
+
   // Required link attribute names
 
   public static let Rel = "rel"
