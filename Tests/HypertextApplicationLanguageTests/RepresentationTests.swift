@@ -77,6 +77,7 @@ class RepresentationTests: HypertextApplicationLanguageTests {
     // then
     XCTAssertEqual(representation.link!.rel, Link.SelfRel)
     XCTAssertEqual(representation.link!.href, "/path/to/self")
+    XCTAssertEqual(representation.link(for: Link.SelfRel), representation.links.first)
   }
 
 }
