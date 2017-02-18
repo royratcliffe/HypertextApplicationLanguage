@@ -1,6 +1,6 @@
 // HypertextApplicationLanguageTests RepresentationTests.swift
 //
-// Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2015, 2016, 2017, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -25,4 +25,59 @@
 import XCTest
 import HypertextApplicationLanguage
 
-class RepresentationTests: XCTestCase {}
+class RepresentationTests: HypertextApplicationLanguageTests {
+
+  /// Renders an empty representation (no links, no properties, no embedded
+  /// representations) to JSON. Checks that the result is an empty JSON object:
+  /// open and close brace.
+  func testRenderEmpty() {
+    // given
+    let representation = Representation()
+    // when
+    // swiftlint:disable:next force_try
+    let string = String(data: try! representation.jsonData(), encoding: String.Encoding.utf8)!
+    // then
+    XCTAssertEqual(string, "{}")
+  }
+
+  func testRenderSelfLink() {
+    // given
+    let representation = Representation().with(rel: Link.SelfRel, href: "http://localhost/path/to/self")
+    // when
+    // swiftlint:disable:next force_try
+    let string = try! representation.jsonString()!
+    // then
+    XCTAssertEqual(string, "{\"_links\":{\"self\":{\"href\":\"http://localhost/path/to/self\"}}}")
+  }
+
+  func testRenderCustomer123456() {
+    // given
+    let path = "customer/123456"
+    let representation = type(of: self).newBaseRepresentation(path: path)
+    // when
+    representation
+      .with(rel: "ns:users", href: type(of: self).BaseURLString + path + "?users")
+      .with(name: "id", value: 123456)
+      .with(name: "age", value: 33)
+      .with(name: "name", value: "Example Resource")
+      .with(name: "optional", value: true)
+      .with(name: "expired", value: false)
+    // then
+    // swiftlint:disable:next force_cast
+    XCTAssertEqual(representation.render() as NSDictionary, jsonObject(forResource: "example") as! NSDictionary)
+  }
+
+  func testParse() {
+    // given
+    // swiftlint:disable:next force_try
+    let string = try! Representation().with(rel: Link.SelfRel, href: "/path/to/self").jsonString()!
+    // when
+    // swiftlint:disable:next force_try
+    let representation = try! Representation.from(json: string.data(using: String.Encoding.utf8)!)
+    // then
+    XCTAssertEqual(representation.link!.rel, Link.SelfRel)
+    XCTAssertEqual(representation.link!.href, "/path/to/self")
+    XCTAssertEqual(representation.link(for: Link.SelfRel), representation.links.first)
+  }
+
+}

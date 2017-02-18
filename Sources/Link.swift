@@ -22,6 +22,8 @@
 //
 //------------------------------------------------------------------------------
 
+import Foundation
+
 /// Links belong to representations; a representation retains zero or more
 /// links. Each link gives a hypertext reference for a relation, at least. Some
 /// links provide more information.
@@ -55,6 +57,17 @@ public struct Link {
   /// the path.
   public var href: String
 
+  /// Works out if the link comprises a template form of reference. True if the
+  /// link's hypertext reference contains at least one template pattern.
+  public var templated: Bool {
+    struct Templated {
+      // swiftlint:disable:next force_try
+      static let expression = try! NSRegularExpression(pattern: "\\{.+\\}")
+    }
+    let range = NSRange(location: 0, length: href.characters.count)
+    return Templated.expression.numberOfMatches(in: href, range: range) > 0
+  }
+
   // Optional attributes
 
   public var name: String?
@@ -65,6 +78,32 @@ public struct Link {
   public var hreflang: String?
 
   public var profile: String?
+
+  /// Constructs a new link based on this link but with the name changed.
+  /// - parameter name: Optional name to replace any existing name.
+  public func with(name: String?) -> Link {
+    var link = self
+    link.name = name
+    return link
+  }
+
+  public func with(title: String?) -> Link {
+    var link = self
+    link.title = title
+    return link
+  }
+
+  public func with(hreflang: String?) -> Link {
+    var link = self
+    link.hreflang = hreflang
+    return link
+  }
+
+  public func with(profile: String?) -> Link {
+    var link = self
+    link.profile = profile
+    return link
+  }
 
   // Required link attribute names
 
@@ -77,6 +116,7 @@ public struct Link {
   public static let Title = "title"
   public static let Hreflang = "hreflang"
   public static let Profile = "profile"
+  public static let Templated = "templated"
 
   /// Array of attribute names including those required and those optional.
   public static let AttributeNames = [
@@ -89,6 +129,7 @@ public struct Link {
     Title,
     Hreflang,
     Profile,
+    Templated,
   ]
 
   // Special link relations

@@ -24,4 +24,9 @@
 
 import PackageDescription
 
-let package = Package(name: "HypertextApplicationLanguage")
+let package = Package(
+  name: "HypertextApplicationLanguage",
+  exclude: [
+    "Tests/HypertextApplicationLanguageTests/Fixtures",
+  ]
+)

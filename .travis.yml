@@ -5,6 +5,8 @@ before_install:
   - gem install xcpretty
 
 env:
+  global:
+    - CODE_SIGNING_REQUIRED=NO
   matrix:
     - DESTINATION="name=iPhone 6s"
 
