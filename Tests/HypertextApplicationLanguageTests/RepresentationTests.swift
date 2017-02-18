@@ -67,4 +67,16 @@ class RepresentationTests: HypertextApplicationLanguageTests {
     XCTAssertEqual(representation.render() as NSDictionary, jsonObject(forResource: "example") as! NSDictionary)
   }
 
+  func testParse() {
+    // given
+    // swiftlint:disable:next force_try
+    let string = try! Representation().with(rel: Link.SelfRel, href: "/path/to/self").jsonString()!
+    // when
+    // swiftlint:disable:next force_try
+    let representation = try! Representation.from(json: string.data(using: String.Encoding.utf8)!)
+    // then
+    XCTAssertEqual(representation.link!.rel, Link.SelfRel)
+    XCTAssertEqual(representation.link!.href, "/path/to/self")
+  }
+
 }
