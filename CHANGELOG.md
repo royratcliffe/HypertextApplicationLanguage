@@ -1,5 +1,32 @@
 # Change Log
 
+## [1.0.0](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/1.0.0) (2017-02-18)
+
+- Added What Can You Do With It? section to README
+- Link for self-relation matches first link
+- Added parsing test
+- Name rendering tests as `testRender`
+- Update copyright years
+- Tests for representation parsing and rendering
+- Make Swift package manager aware of fixtures
+- Use `type(of: self)` to access self class
+- Link imports Foundation for `NSRegularExpression`
+- Added tools for loading JSON from test bundle
+- Added JSON parsing and rendering methods
+- Added `Link.with()` methods
+- Fixed comment for `Link.templated` getter
+- `Link.templated` answers `true` if hypertext reference contains one or more templates
+- Representation’s `with(rel:href:)` allows discardable result
+- Implement Link equatable using static method
+- Merge branch 'feature/string_to_any' into develop
+- Allow function bodies of 50 lines before warning
+- Oops, SwiftLint requires space around `==`
+- Style adjustment: remove space after `==`
+- Parser and renderer become Representation methods using `[String: Any]` and `[Any]` Swift types
+- Code signing not required for Travis CI
+
+[Full Change Log](https://github.com/royratcliffe/hypertextapplicationlanguage/compare/0.3.0...1.0.0)
+
 ## [0.3.0](https://github.com/royratcliffe/hypertextapplicationlanguage/tree/0.3.0) (2017-02-15)
 
 - Merge branch 'feature/swift_package_manager' into develop
