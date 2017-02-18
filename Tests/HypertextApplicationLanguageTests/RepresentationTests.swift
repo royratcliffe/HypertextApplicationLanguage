@@ -30,7 +30,7 @@ class RepresentationTests: HypertextApplicationLanguageTests {
   /// Renders an empty representation (no links, no properties, no embedded
   /// representations) to JSON. Checks that the result is an empty JSON object:
   /// open and close brace.
-  func testEmpty() {
+  func testRenderEmpty() {
     // given
     let representation = Representation()
     // when
@@ -40,7 +40,7 @@ class RepresentationTests: HypertextApplicationLanguageTests {
     XCTAssertEqual(string, "{}")
   }
 
-  func testSelfLink() {
+  func testRenderSelfLink() {
     // given
     let representation = Representation().with(rel: Link.SelfRel, href: "http://localhost/path/to/self")
     // when
@@ -50,7 +50,7 @@ class RepresentationTests: HypertextApplicationLanguageTests {
     XCTAssertEqual(string, "{\"_links\":{\"self\":{\"href\":\"http://localhost/path/to/self\"}}}")
   }
 
-  func testCustomer123456() {
+  func testRenderCustomer123456() {
     // given
     let path = "customer/123456"
     let representation = type(of: self).newBaseRepresentation(path: path)
