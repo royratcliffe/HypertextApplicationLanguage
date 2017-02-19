@@ -28,6 +28,7 @@ extension Representation {
 
   /// Deserialises the given data as JSON and parses the successful result,
   /// merging the results into this representation.
+  ///
   /// - parameter data: JSON-encoded block of data from which to extract the
   ///   representation.
   /// - parameter options: JSON deserialisation options.
@@ -42,6 +43,7 @@ extension Representation {
   }
 
   /// Constructs a new representation based on the given JSON-encoded data.
+  ///
   /// - parameter data: JSON-encoded data from which to extract a representation.
   /// - parameter options: JSON deserialisation options.
   /// - throws: Error if the Foundation framework fails to deserialise the data.
@@ -53,6 +55,7 @@ extension Representation {
   }
 
   /// Renders and serialises this representation as JSON.
+  ///
   /// - parameter options: JSON serialisation options.
   public func jsonData(options: JSONSerialization.WritingOptions = []) throws -> Data {
     return try JSONSerialization.data(withJSONObject: render(), options: options)
@@ -62,6 +65,7 @@ extension Representation {
   /// if JSON serialisation fails to successfully convert the rendered
   /// string-to-any dictionary intermediate representation. Answers `nil` if the
   /// serialised JSON data fails to convert to a UTF-8 string.
+  ///
   /// - parameter options: JSON serialisation options.
   /// - returns: String containing JSON-encoded rendering of this representation.
   /// - throws: An error if JSON serialisation fails.

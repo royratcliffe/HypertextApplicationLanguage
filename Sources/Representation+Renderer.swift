@@ -27,6 +27,7 @@ import Foundation
 extension Representation {
 
   /// Renders a representation to a dictionary.
+  ///
   /// - returns: The resulting dictionary representation.
   public func render() -> [String: Any] {
     return render(embedded: false)

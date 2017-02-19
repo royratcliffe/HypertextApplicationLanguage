@@ -53,8 +53,9 @@ public class NamespaceManager {
 
   /// Converts an expanded hypertext reference to a CURIE'd reference based on
   /// the current set of CURIE specifications, the name-spaces.
+  ///
   /// - returns: Answers the CURIE'd reference corresponding to the given
-  ///   hypertext reference, or +nil+ if there is no matching CURIE.
+  ///   hypertext reference, or `nil` if there is no matching CURIE.
   ///
   /// The implementation avoids using `hasPrefix` and `hasSuffix`. These methods
   /// always answer `false` if the given prefix or suffix is an empty string.

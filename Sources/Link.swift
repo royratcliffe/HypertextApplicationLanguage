@@ -40,6 +40,7 @@ import Foundation
 public struct Link {
 
   /// Creates a new mutable link.
+  ///
   /// - returns: Answers a newly initialised link.
   /// - parameter rel: Relation.
   /// - parameter href: Hypertext reference.
@@ -80,6 +81,7 @@ public struct Link {
   public var profile: String?
 
   /// Constructs a new link based on this link but with the name changed.
+  ///
   /// - parameter name: Optional name to replace any existing name.
   public func with(name: String?) -> Link {
     var link = self
