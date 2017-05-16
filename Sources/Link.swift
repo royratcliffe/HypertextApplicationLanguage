@@ -62,10 +62,10 @@ public struct Link {
   public var templated: Bool {
     struct Templated {
       // swiftlint:disable:next force_try
-      static let expression = try! NSRegularExpression(pattern: "\\{.+\\}")
+      static let expression = try! NSRegularExpression(pattern: "\\{.+\\}", options: [])
     }
     let range = NSRange(location: 0, length: href.characters.count)
-    return Templated.expression.numberOfMatches(in: href, range: range) > 0
+    return Templated.expression.numberOfMatches(in: href, options: [], range: range) > 0
   }
 
   // Optional attributes
